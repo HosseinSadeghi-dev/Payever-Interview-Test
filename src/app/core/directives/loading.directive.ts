@@ -1,11 +1,11 @@
-import {Directive, ElementRef, Input, OnChanges, Renderer2, SimpleChanges} from '@angular/core';
+import {Directive, ElementRef, input, InputSignal, OnChanges, Renderer2, SimpleChanges} from '@angular/core';
 
 @Directive({
   selector: '[loading]',
   standalone: true,
 })
 export class LoadingDirective implements OnChanges {
-  @Input() loading: boolean = false;
+  loading:InputSignal<boolean> = input<boolean>(false);
 
   private spinnerElement: HTMLElement | null = null;
   private originalButtonContent: string | null = null;
@@ -20,7 +20,7 @@ export class LoadingDirective implements OnChanges {
 
   private updateButtonState(): void {
     const button = this.el.nativeElement;
-    if (this.loading) {
+    if (this.loading()) {
       this.disableButton(button);
       this.showSpinner(button);
     } else {

@@ -1,7 +1,9 @@
-<mat-toolbar class="d-flex flex-row justify-content-start align-items-center">
+<mat-toolbar class="d-flex flex-row justify-content-start align-items-center gap-3">
   <button (click)="toggleSidenav.emit(true)" mat-icon-button
           aria-label="icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
   <span>Payever Calendar</span>
+  <app-today-btn/>
+  <app-change-day-btn/>
 </mat-toolbar>

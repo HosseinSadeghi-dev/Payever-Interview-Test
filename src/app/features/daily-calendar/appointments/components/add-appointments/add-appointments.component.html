@@ -1,0 +1,59 @@
+<ng-template>
+  <form class="add-appointment-content d-flex flex-column justify-content-start align-items-stretch p-3"
+        cdkDrag cdkDragRootElement=".cdk-overlay-pane"
+        [formGroup]="appointmentForm" (ngSubmit)="submitForm()">
+
+    <h2 mat-dialog-title class="mb-0">
+      @if (id) {
+        Update Appointment
+      } @else {
+        Add Appointment
+      }
+    </h2>
+
+    <mat-dialog-content class="my-3 d-flex flex-column justify-content-start align-items-stretch gap-4">
+
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title" placeholder="Add Title">
+        <mat-error>Title is Required</mat-error>
+      </mat-form-field>
+
+      <div class="d-flex flex-row justify-content-start align-items-center gap-2">
+        <mat-form-field appearance="outline">
+          <mat-label>Date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="date">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Start</mat-label>
+          <input matInput type="time" formControlName="start">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>End</mat-label>
+          <input matInput type="time" formControlName="end">
+          @if (appointmentForm.hasError('timeRangeInvalid')) {
+            <mat-error>
+              Start time must be earlier than end time.
+            </mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea rows="3" matInput formControlName="description" placeholder="Add description"></textarea>
+      </mat-form-field>
+
+    </mat-dialog-content>
+
+    <mat-dialog-actions class="d-flex flex-row justify-content-end align-center">
+      <button mat-button color="warn" (click)="closeDialog()">Cancel</button>
+      <button mat-flat-button color="primary" cdkFocusInitial type="submit" [disabled]="appointmentForm.invalid">Submit</button>
+    </mat-dialog-actions>
+
+  </form>
+</ng-template>

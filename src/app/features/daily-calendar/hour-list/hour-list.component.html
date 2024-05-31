@@ -1,0 +1,9 @@
+<ul>
+  @for (hour of hours; track hour; let first = $first) {
+    <li >
+      @if (!first){
+        {{ hour }}
+      }
+    </li>
+  }
+</ul>

@@ -1,26 +1,26 @@
 @for $i from 0 through 40 {
   .p-#{$i} {
-    padding: $i * 0.25rem;
+    padding: $i * 0.25rem !important;
   }
   .pl-#{$i} {
-    padding-left: $i * 0.25rem;
+    padding-left: $i * 0.25rem !important;
   }
   .pr-#{$i} {
-    padding-right: $i * 0.25rem;
+    padding-right: $i * 0.25rem !important;
   }
   .pb-#{$i} {
-    padding-bottom: $i * 0.25rem;
+    padding-bottom: $i * 0.25rem !important;
   }
   .pt-#{$i} {
-    padding-top: $i * 0.25rem;
+    padding-top: $i * 0.25rem !important;
   }
   .px-#{$i} {
-    padding-right: $i * 0.25rem;
-    padding-left: $i * 0.25rem;
+    padding-right: $i * 0.25rem !important;
+    padding-left: $i * 0.25rem !important;
   }
   .py-#{$i} {
-    padding-top: $i * 0.25rem;
-    padding-bottom: $i * 0.25rem;
+    padding-top: $i * 0.25rem !important;
+    padding-bottom: $i * 0.25rem !important;
   }
   @media (max-width: 768px) {
     .p-xs-#{$i} {

@@ -1,0 +1,14 @@
+.app-container {
+  min-height: calc(100dvh - var(--mat-toolbar-standard-height));
+  display: flex !important;
+
+  &__drawer {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  &__content {
+    display: flex !important;
+    height: unset;
+  }
+}

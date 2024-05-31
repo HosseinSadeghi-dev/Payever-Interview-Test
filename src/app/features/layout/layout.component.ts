@@ -3,6 +3,7 @@ import {RouterOutlet} from "@angular/router";
 import {SnackbarComponent} from "@/app/shared/snackbar/snackbar.component";
 import {HeaderComponent} from "@/app/features/header/header.component";
 import {MatDrawer, MatDrawerContainer, MatDrawerContent} from "@angular/material/sidenav";
+import {CalendarComponent} from "@/app/features/calendar/calendar.component";
 
 @Component({
   selector: 'app-layout',
@@ -13,7 +14,8 @@ import {MatDrawer, MatDrawerContainer, MatDrawerContent} from "@angular/material
     HeaderComponent,
     MatDrawerContainer,
     MatDrawer,
-    MatDrawerContent
+    MatDrawerContent,
+    CalendarComponent
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss'

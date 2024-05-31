@@ -1,1 +1,11 @@
-<p>calendar works!</p>
+<div class="d-flex flex-column justify-content-start align-items-stretch">
+  <button mat-fab extended color="primary" class="m-4" (click)="addAppointments();">
+    <mat-icon>add</mat-icon>
+    Create
+  </button>
+  <mat-calendar
+    (selectedChange)="changeDate($event)"
+    [selected]="currentDateService.selectedDate | async"></mat-calendar>
+</div>
+
+<app-add-appointments (updateAppointments)="updateAppointments()"/>

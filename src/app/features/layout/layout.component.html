@@ -1,8 +1,10 @@
 <div class="d-flex flex-column justify-content-start align-items-stretch">
   <app-header (toggleSidenav)="drawer.toggle()"/>
-  <mat-drawer-container class="example-container">
-    <mat-drawer #drawer mode="push" opened>Drawer content</mat-drawer>
-    <mat-drawer-content>
+  <mat-drawer-container class="app-container d-flex flex-row justify-content-between align-items-stretch" [hasBackdrop]="false">
+    <mat-drawer #drawer mode="side" opened class="app-container__drawer">
+      <app-calendar/>
+    </mat-drawer>
+    <mat-drawer-content class="app-container__content d-flex flex-column justify-content-start align-items-stretch col p-2">
       <router-outlet></router-outlet>
     </mat-drawer-content>
   </mat-drawer-container>

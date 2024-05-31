@@ -14,12 +14,14 @@
       "@enums/*": ["./src/app/core/enums/*"],
       "@directives/*": ["./src/app/core/directives/*"],
       "@assets/*": ["./src/assets/*"],
+      "@types/*": ["./@types/*"],
     }
   },
   "files": [
     "src/main.ts"
   ],
   "include": [
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
+    "@types/*.d.ts"
   ]
 }

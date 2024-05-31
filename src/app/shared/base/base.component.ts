@@ -1,10 +1,7 @@
 import {Component, DestroyRef, inject, NgZone} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {ActivatedRoute, Router} from "@angular/router";
-import {fromEvent, map, merge, of} from "rxjs";
-import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
-import {SnackbarService} from "@/app/shared/snackbar/services/snackbar.service";
-import {SnackbarType} from "@/app/shared/snackbar/models/snackbar.model";
+import {SnackbarService} from "../snackbar/services/snackbar.service";
 
 @Component({
   selector: 'app-base',
@@ -18,38 +15,14 @@ export class BaseComponent {
   readonly router: Router = inject(Router);
   readonly snackbarService: SnackbarService = inject(SnackbarService);
   readonly zone: NgZone = inject(NgZone);
-  isMobile = false;
 
   constructor() {
-    this.checkIsMobile();
-    this.checkNetworkStatus();
-  }
-
-  checkIsMobile(): void {
-    this.isMobile = window.innerWidth < 756;
   }
 
   runOutsideAngularWithDelay(action: () => void, delay: number): void {
     this.zone.runOutsideAngular(() => {
       setTimeout(() => this.zone.run(action), delay);
     });
-  }
-
-  checkNetworkStatus() {
-    merge(
-      of(null),
-      fromEvent(window, 'online'),
-      fromEvent(window, 'offline')
-    )
-      .pipe(map(() => navigator.onLine))
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe(status => {
-        if (status) {
-          this.snackbarService.show('', SnackbarType.Error, 1);
-          return
-        }
-        this.snackbarService.show('Check Your Internet Connection', SnackbarType.Error, 0)
-      });
   }
 
 }

@@ -6,7 +6,16 @@ export const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    children: []
+    children: [
+      {
+        path: '',
+        loadComponent: () => import('@/app/features/daily-calendar/daily-calendar.component').then(c => c.DailyCalendarComponent),
+      },
+      {
+        path: ':year/:month/:day',
+        loadComponent: () => import('@/app/features/daily-calendar/daily-calendar.component').then(c => c.DailyCalendarComponent),
+      },
+    ]
   },
   {
     path: '**',

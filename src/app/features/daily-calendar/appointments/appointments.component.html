@@ -1,0 +1,26 @@
+<div class="boundary d-flex flex-column justify-content-start align-items-stretch">
+<!--  i could use *ngFor but in new angular v17 syntax is better to use @for, i wrote this sentence because you said to use *ngFor to render-->
+  @for (dailyHour of dailyHours; track dailyHour.hour; let index = $index) {
+    <div class="day-hour" (click)="addAppointments(index)">
+      @if (dailyHour.appointment) {
+        <mat-card class="appointment bg-primary"
+                  cdkDragLockAxis="y" cdkDrag cdkDragBoundary=".boundary"
+                  (cdkDragEnded)="$event.event.stopPropagation();$event.event.preventDefault();drop($event, dailyHour.appointment)"
+                  (cdkDragStarted)="$event.event.stopPropagation();$event.event.preventDefault()"
+                  (click)="$event.stopPropagation();$event.preventDefault();editAppointment(index)"
+                  [style.height.px]="cardHeight(dailyHour.appointment.length)"
+                  [style.margin-top.px]="dailyHour.appointment.start.getMinutes()">
+          <div class="cdk-drag-placeholder" *cdkDragPlaceholder></div>
+          <mat-card-content class="d-flex py-1 px-2 flex-row justify-content-between align-items-center">
+            <span>{{ dailyHour.appointment.title }}</span>
+            <app-delete-appointments [appointmentId]="dailyHour.appointment.id"
+                                     (updateAppointments)="generateHours();"/>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  }
+</div>
+
+
+<app-add-appointments (updateAppointments)="generateHours();"/>

@@ -2,6 +2,8 @@
 @use "palette" as palette;
 @include mat.core();
 
+mat.$theme-ignore-duplication-warnings: true;
+
 $Payever-primary: mat.define-palette(palette.$primary-palette);
 $Payever-accent: mat.define-palette(palette.$accent-palette);
 $Payever-warn: mat.define-palette(mat.$red-palette);
@@ -17,11 +19,11 @@ $Payever-theme: (
 $light-theme: mat.define-light-theme($Payever-theme);
 $dark-theme: mat.define-dark-theme($Payever-theme);
 
-.light-theme {
-  @include mat.all-component-themes($light-theme);
-  @include mat.button-density(0);
-  @include mat.private-form-field-density(-4);
-}
+//.light-theme {
+//  @include mat.all-component-themes($light-theme);
+//  @include mat.button-density(0);
+//  @include mat.private-form-field-density(-4);
+//}
 
 @media (prefers-color-scheme: light) {
   :root:not(.dark-theme) {
@@ -31,11 +33,11 @@ $dark-theme: mat.define-dark-theme($Payever-theme);
   }
 }
 
-.dark-theme {
-  @include mat.all-component-themes($dark-theme);
-  @include mat.button-density(0);
-  @include mat.private-form-field-density(-4);
-}
+//.dark-theme {
+//  @include mat.all-component-colors($dark-theme);
+//  @include mat.button-density(0);
+//  @include mat.private-form-field-density(-4);
+//}
 
 @media (prefers-color-scheme: dark) {
   :root:not(.light-theme) {
@@ -47,14 +49,26 @@ $dark-theme: mat.define-dark-theme($Payever-theme);
 
 
 .text-primary {
-  color: mat.get-theme-color($Payever-theme, primary, default);
+  color: mat.get-theme-color($Payever-theme, primary, default) !important;
 }
 
 .text-accent {
-  color: mat.get-theme-color($Payever-theme, accent, default);
+  color: mat.get-theme-color($Payever-theme, accent, default) !important;
 }
 
 .text-warn {
-  color: mat.get-theme-color($Payever-theme, warn, default);
+  color: mat.get-theme-color($Payever-theme, warn, default) !important;
 }
 
+
+.bg-primary {
+  background-color: mat.get-theme-color($Payever-theme, primary, default) !important;
+}
+
+.bg-accent {
+  background-color: mat.get-theme-color($Payever-theme, accent, default) !important;
+}
+
+.bg-warn {
+  background-color: mat.get-theme-color($Payever-theme, warn, default) !important;
+}
