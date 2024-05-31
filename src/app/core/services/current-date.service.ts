@@ -1,22 +1,19 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject} from "rxjs";
+import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: "root"
 })
 export class CurrentDateService {
-  #selectedDate: BehaviorSubject<Date> = new BehaviorSubject<Date>(new Date())
+    #selectedDate: BehaviorSubject<Date> = new BehaviorSubject<Date>(new Date());
 
-  constructor() {
-  }
-
-  set selectedDate(date: Date | null) {
-    if (date instanceof Date) {
-      this.#selectedDate.next(date);
+    set selectedDate(date: Date | null) {
+        if (date instanceof Date) {
+            this.#selectedDate.next(date);
+        }
     }
-  }
 
-  get selectedDate(): BehaviorSubject<Date> {
-    return this.#selectedDate;
-  }
+    get selectedDate(): BehaviorSubject<Date> {
+        return this.#selectedDate;
+    }
 }

@@ -23,6 +23,10 @@
         // ESLint rules
         "import/prefer-default-export": "off",
         "import/first": "error",
+        "no-param-reassign": "off",
+        "class-methods-use-this": "off",
+        "@typescript-eslint/dot-notation": "off",
+        "no-underscore-dangle": "off",
         "import/newline-after-import": "error",
         "import/no-duplicates": "error",
         "max-len": [
@@ -43,6 +47,7 @@
           4
         ],
         "@typescript-eslint/comma-dangle": "off",
+        "@typescript-eslint/no-throw-literal": "off",
         "@typescript-eslint/lines-between-class-members": "off",
         "@typescript-eslint/quotes": ["error","double"],
         "@typescript-eslint/no-shadow": "error",

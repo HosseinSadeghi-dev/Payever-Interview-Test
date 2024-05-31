@@ -1,4 +1,4 @@
-import {AbstractControl, FormGroup} from '@angular/forms';
+import { AbstractControl, FormGroup } from "@angular/forms";
 
 // Utility type to convert an interface's properties to FormControl types
 export type IFormGroupControls<T> = { [key in keyof T]: AbstractControl };
