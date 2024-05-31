@@ -1,0 +1,54 @@
+/* Base container */
+.container {
+  width: 100%;
+  padding-right: .75rem;
+  padding-left: .75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Container for different breakpoints */
+@media (min-width: 576px) { /* sm breakpoint */
+  .container, .container-sm {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .container, .container-md {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) { /* lg breakpoint */
+  .container, .container-lg {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) { /* xl breakpoint */
+  .container, .container-xl {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) { /* xxl breakpoint */
+  .container, .container-xxl {
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 1580px) { /* xxl breakpoint */
+  .container, .container-xxxl {
+    max-width: 1480px;
+  }
+}
+
+/* Full-width container */
+.container-fluid {
+  width: 100%;
+  padding-right: .75rem;
+  padding-left: .75rem;
+  margin-right: auto;
+  margin-left: auto;
+}

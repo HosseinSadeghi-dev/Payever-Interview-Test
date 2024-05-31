@@ -1,0 +1,122 @@
+@for $i from 0 through 40 {
+  .m-#{$i} {
+    margin: $i * 0.25rem;
+  }
+  .ml-#{$i} {
+    margin-left: $i * 0.25rem;
+  }
+  .mr-#{$i} {
+    margin-right: $i * 0.25rem;
+  }
+  .mb-#{$i} {
+    margin-bottom: $i * 0.25rem !important;
+  }
+  .mt-#{$i} {
+    margin-top: $i * 0.25rem;
+  }
+  .my-#{$i} {
+    margin-top: $i * 0.25rem;
+    margin-bottom: $i * 0.25rem;
+  }
+  .mx-#{$i} {
+    margin-left: $i * 0.25rem;
+    margin-right: $i * 0.25rem;
+  }
+  .m-n#{$i} {
+    margin: $i * -0.25rem;
+  }
+  .ml-n#{$i} {
+    margin-left: $i * -0.25rem;
+  }
+  .mr-n#{$i} {
+    margin-right: $i * -0.25rem;
+  }
+  .mb-n#{$i} {
+    margin-bottom: $i * -0.25rem;
+  }
+  .mt-n#{$i} {
+    margin-top: $i * -0.25rem;
+  }
+  .my-n#{$i} {
+    margin-top: $i * -0.25rem;
+    margin-bottom: $i * -0.25rem;
+  }
+  .mx-n#{$i} {
+    margin-left: $i * -0.25rem;
+    margin-right: $i * -0.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .m-xs-#{$i} {
+      margin: $i * 0.25rem !important;
+    }
+    .ml-xs-#{$i} {
+      margin-left: $i * 0.25rem !important;
+    }
+    .mr-xs-#{$i} {
+      margin-right: $i * 0.25rem !important;
+    }
+    .mb-xs-#{$i} {
+      margin-bottom: $i * 0.25rem !important;
+    }
+    .mt-xs-#{$i} {
+      margin-top: $i * 0.25rem !important;
+    }
+    .my-xs-#{$i} {
+      margin-top: $i * 0.25rem;
+      margin-bottom: $i * 0.25rem;
+    }
+    .mx-xs-#{$i} {
+      margin-left: $i * 0.25rem;
+      margin-right: $i * 0.25rem;
+    }
+    .m-xs-n#{$i} {
+      margin: $i * -0.25rem !important;
+    }
+    .ml-xs-n#{$i} {
+      margin-left: $i * -0.25rem !important;
+    }
+    .mr-xs-n#{$i} {
+      margin-right: $i * -0.25rem !important;
+    }
+    .mb-xs-n#{$i} {
+      margin-bottom: $i * -0.25rem !important;
+    }
+    .mt-xs-n#{$i} {
+      margin-top: $i * -0.25rem !important;
+    }
+    .my-xs-n#{$i} {
+      margin-top: $i * -0.25rem;
+      margin-bottom: $i * -0.25rem;
+    }
+    .mx-xs-n#{$i} {
+      margin-left: $i * -0.25rem;
+      margin-right: $i * -0.25rem;
+    }
+  }
+
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.mt-auto {
+  margin-top: auto;
+}
+.mb-auto {
+  margin-bottom: auto;
+}
+.my-auto {
+  @extend .mb-auto;
+  @extend .mt-auto;
+}
+.mx-auto {
+  @extend .ml-auto;
+  @extend .mr-auto;
+}
+.m-auto {
+  margin: auto;
+}

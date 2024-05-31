@@ -1,0 +1,10 @@
+<div *ngIf="(snackbarService.snackbar | async)?.show" @state
+     [ngClass]="['snackbar-wrap',(snackbarService.snackbar | async)?.type]">
+  <p class="snackbar-text">
+    {{ (snackbarService.snackbar | async)?.message }}
+  </p>
+</div>
+
+
+
+

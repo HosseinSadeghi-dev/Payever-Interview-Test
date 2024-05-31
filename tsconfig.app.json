@@ -2,8 +2,19 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@models/*": ["./src/app/core/models/*"],
+      "@services/*": ["./src/app/core/services/*"],
+      "@pipes/*": ["./src/app/core/pipes/*"],
+      "@guards/*": ["./src/app/core/guards/*"],
+      "@enums/*": ["./src/app/core/enums/*"],
+      "@directives/*": ["./src/app/core/directives/*"],
+      "@assets/*": ["./src/assets/*"],
+    }
   },
   "files": [
     "src/main.ts"

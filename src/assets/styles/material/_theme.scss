@@ -1,0 +1,60 @@
+@use '@angular/material' as mat;
+@use "palette" as palette;
+@include mat.core();
+
+$Payever-primary: mat.define-palette(palette.$primary-palette);
+$Payever-accent: mat.define-palette(palette.$accent-palette);
+$Payever-warn: mat.define-palette(mat.$red-palette);
+
+$Payever-theme: (
+  color: (
+    primary: $Payever-primary,
+    accent: $Payever-accent,
+    warn: $Payever-warn,
+  ),
+);
+
+$light-theme: mat.define-light-theme($Payever-theme);
+$dark-theme: mat.define-dark-theme($Payever-theme);
+
+.light-theme {
+  @include mat.all-component-themes($light-theme);
+  @include mat.button-density(0);
+  @include mat.private-form-field-density(-4);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not(.dark-theme) {
+    @include mat.all-component-themes($light-theme);
+    @include mat.button-density(0);
+    @include mat.private-form-field-density(-4);
+  }
+}
+
+.dark-theme {
+  @include mat.all-component-themes($dark-theme);
+  @include mat.button-density(0);
+  @include mat.private-form-field-density(-4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light-theme) {
+    @include mat.all-component-themes($dark-theme);
+    @include mat.button-density(0);
+    @include mat.private-form-field-density(-4);
+  }
+}
+
+
+.text-primary {
+  color: mat.get-theme-color($Payever-theme, primary, default);
+}
+
+.text-accent {
+  color: mat.get-theme-color($Payever-theme, accent, default);
+}
+
+.text-warn {
+  color: mat.get-theme-color($Payever-theme, warn, default);
+}
+

@@ -1,0 +1,42 @@
+/* Base columns - always 100% width on extra small devices */
+[class*="col-"] {
+  width: 100%;
+  min-height: 1px;
+}
+
+.col, .col-xs {
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+$maxCol: 12;
+
+@for $i from 1 through $maxCol {
+
+  @media (max-width: 768px) {
+    .col-xs-#{$i} {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc($i / $maxCol) * 100%;
+      flex: 0 0 calc($i / $maxCol) * 100%;
+      max-width: calc($i / $maxCol) * 100%;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .col-md-#{$i} {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc($i / $maxCol) * 100%;
+      flex: 0 0 calc($i / $maxCol) * 100%;
+      max-width: calc($i / $maxCol) * 100%;
+    }
+  }
+
+  .col-#{$i} {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc($i / $maxCol) * 100%;
+    flex: 0 0 calc($i / $maxCol) * 100%;
+    max-width: calc($i / $maxCol) * 100%;
+  }
+}

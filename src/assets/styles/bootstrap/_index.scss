@@ -1,0 +1,18 @@
+@use "../material/palette" as palette;
+@import "flex";
+@import "container";
+@import "margin";
+@import "padding";
+@import "column-grid";
+@import "height-width";
+@import "gap";
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--mat-app-text-color, inherit);
+  text-decoration: unset;
+}

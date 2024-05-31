@@ -1,0 +1,24 @@
+@for $i from 1 through 40 {
+  .gap-#{$i} {
+    gap: $i * 0.25rem;
+  }
+  .gap-row-#{$i} {
+    row-gap: $i * 0.25rem;
+  }
+  .gap-column-#{$i} {
+    column-gap: $i * 0.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .gap-xs-#{$i} {
+      gap: $i * 0.25rem !important;
+    }
+    .gap-xs-row-#{$i} {
+      row-gap: $i * 0.25rem !important;
+    }
+    .gap-xs-column-#{$i} {
+      column-gap: $i * 0.25rem !important;
+    }
+  }
+}
+

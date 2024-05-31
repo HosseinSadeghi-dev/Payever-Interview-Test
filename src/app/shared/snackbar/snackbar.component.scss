@@ -1,0 +1,45 @@
+@use "../../../assets/styles/material/palette" as palette;
+
+.snackbar-wrap {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  padding: 16px;
+  border-radius: 5px;
+  min-width: 20%;
+  transform-origin: center center;
+  transform: translate(-50%, 0%);
+  z-index: 100;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+  0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+
+  @media screen and (max-width: 425px) {
+    left: 8px;
+    right: 8px;
+    transform: translate(0%, 0%);
+    bottom: 20px;
+  }
+
+  &.success {
+    background: green;
+  }
+
+  &.error {
+    background: darkred;
+  }
+
+  &.info {
+    background: palette.$primary-color;
+  }
+
+  &.warning {
+    background: #c9c900;
+  }
+
+  .snackbar-text {
+    text-align: center;
+    color: white;
+    margin: 0;
+    font-size: 14px;
+  }
+}
